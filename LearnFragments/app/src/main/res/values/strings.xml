@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Learn Fragments</string>
+    <string name="teamA">Team A</string>
+    <string name="teamB">Team B</string>
+    <string name="reset">Reset</string>
+    <string name="scoreA">0</string>
+    <string name="scoreB">0</string>
+
+    <string name="threePoints">+3 Points</string>
+    <string name="twoPoints">+2 Points</string>
+    <string name="freeThrow">Free Throw</string>
+
+</resources>

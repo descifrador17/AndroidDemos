@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Bitcoin</string>
+
+    <string name="bitcoin_icon_desc">Bitcoin Rate Tracker</string>
+
+    <string name="bitcoin_rate_desc">Rate of Bitcoin</string>
+    <string name="bitcoin_rate">Fetching Data</string>
+
+    <string name="base_currency_desc">Base Currency of Bitcoin</string>
+    <string name="base_currency">Base Currency</string>
+
+    <string-array name="currency">
+        <item>INR</item>
+        <item>USD</item>
+        <item>AUD</item>
+        <item>CNY</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>JPY</item>
+    </string-array>
+
+</resources>

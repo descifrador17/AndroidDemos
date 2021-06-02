@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/scoreFragement">
+
+    <fragment
+        android:id="@+id/scoreFragement"
+        android:name="com.descifrador.learnfragments.score.ScoreFragement"
+        android:label="score_fragement_fragment"
+        tools:layout="@layout/score_fragement_fragment" />
+</navigation>

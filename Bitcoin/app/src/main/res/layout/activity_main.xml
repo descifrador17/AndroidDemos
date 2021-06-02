@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="25dp">
+
+    <ImageView
+        android:id="@+id/bitcoin_image"
+        android:layout_width="198dp"
+        android:layout_height="197dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/bitcoin_icon_desc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.100000024"
+        app:srcCompat="@drawable/bitcoin" />
+
+    <TextView
+        android:id="@+id/bitcoin_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/bitcoin_rate_desc"
+        android:text="@string/bitcoin_rate"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/base_currency"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bitcoin_image" />
+
+    <TextView
+        android:id="@+id/base_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/base_currency_desc"
+        android:text="@string/base_currency"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_light"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <Spinner
+        android:id="@+id/select_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.287"
+        app:layout_constraintStart_toEndOf="@+id/base_currency"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+</android.support.constraint.ConstraintLayout>
