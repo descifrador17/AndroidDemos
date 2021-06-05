@@ -12,15 +12,29 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.runtime.*
+import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.unit.dp
 
 class MainActivity : AppCompatActivity() {
+    val helloViewModel = HelloViewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Column() {
+            Column {
+                var name1 by rememberSaveable {
+                    mutableStateOf("")
+                }
                 greeting()
                 greeting_state()
+                saveableStateFunction(name = name1, onNameChange = { name1 = it})
+
+                // ViewModel and State
+
+
+                val name2: String by helloViewModel.name.observeAsState("")
+                viewModelExample(name = name2, onNameChange = {helloViewModel
+                    .onNameChange(it)})
             }
 
         }
@@ -44,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
     @Composable
     fun greeting_state(){
-        Column(modifier = Modifier.padding(bottom = 8.dp)){
+        Column(modifier = Modifier.padding(16.dp)){
             var name: String by remember {
                 mutableStateOf("")
             }
@@ -58,6 +72,38 @@ class MainActivity : AppCompatActivity() {
                 onValueChange = {name = it},
                 label = { Text(text = "Name")}
 
+            )
+        }
+    }
+
+    @Composable
+    fun saveableStateFunction(name: String, onNameChange: (String) -> Unit){
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                text = "Hello, $name",
+                modifier = Modifier.padding(bottom = 8.dp),
+                style = MaterialTheme.typography.h5
+            )
+            OutlinedTextField(
+                value = name,
+                onValueChange = onNameChange,
+                label = { Text("Name") }
+            )
+        }
+    }
+
+    @Composable
+    fun viewModelExample(name: String, onNameChange: (String) -> Unit){
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                text = "Hello, $name",
+                modifier = Modifier.padding(bottom = 8.dp),
+                style = MaterialTheme.typography.h5
+            )
+            OutlinedTextField(
+                value = name,
+                onValueChange = onNameChange,
+                label = { Text("Name") }
             )
         }
     }
