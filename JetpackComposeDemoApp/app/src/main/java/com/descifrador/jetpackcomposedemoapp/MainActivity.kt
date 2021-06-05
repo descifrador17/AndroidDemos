@@ -15,6 +15,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.unit.dp
+import androidx.ui.tooling.preview.Preview
 
 class MainActivity : AppCompatActivity() {
     val helloViewModel = HelloViewModel()
@@ -39,72 +40,72 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+}
 
-    @Composable
-    fun greeting(){
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text(
-                text = "Hello!",
-                modifier = Modifier.padding(bottom = 8.dp),
-                style = MaterialTheme.typography.h5
-            )
-            OutlinedTextField(
-                value = "",
-                onValueChange = { },
-                label = { Text("Name") }
-            )
-        }
+@Composable
+fun greeting(){
+    Column(modifier = Modifier.padding(16.dp)) {
+        Text(
+            text = "Hello!",
+            modifier = Modifier.padding(bottom = 8.dp),
+            style = MaterialTheme.typography.h5
+        )
+        OutlinedTextField(
+            value = "",
+            onValueChange = { },
+            label = { Text("Name") }
+        )
     }
+}
 
-    @Composable
-    fun greeting_state(){
-        Column(modifier = Modifier.padding(16.dp)){
-            var name: String by remember {
-                mutableStateOf("")
-            }
-            Text(
-                text = "Hello! $name",
-                modifier = Modifier.padding(bottom = 8.dp),
-                style = MaterialTheme.typography.h5
-            )
-            OutlinedTextField(
-                value = name,
-                onValueChange = {name = it},
-                label = { Text(text = "Name")}
-
-            )
+@Composable
+fun greeting_state(){
+    Column(modifier = Modifier.padding(16.dp)){
+        var name: String by remember {
+            mutableStateOf("")
         }
+        Text(
+            text = "Hello! $name",
+            modifier = Modifier.padding(bottom = 8.dp),
+            style = MaterialTheme.typography.h5
+        )
+        OutlinedTextField(
+            value = name,
+            onValueChange = {name = it},
+            label = { Text(text = "Name")}
+
+        )
     }
+}
 
-    @Composable
-    fun saveableStateFunction(name: String, onNameChange: (String) -> Unit){
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text(
-                text = "Hello, $name",
-                modifier = Modifier.padding(bottom = 8.dp),
-                style = MaterialTheme.typography.h5
-            )
-            OutlinedTextField(
-                value = name,
-                onValueChange = onNameChange,
-                label = { Text("Name") }
-            )
-        }
+@Composable
+fun saveableStateFunction(name: String, onNameChange: (String) -> Unit){
+    Column(modifier = Modifier.padding(16.dp)) {
+        Text(
+            text = "Hello, $name",
+            modifier = Modifier.padding(bottom = 8.dp),
+            style = MaterialTheme.typography.h5
+        )
+        OutlinedTextField(
+            value = name,
+            onValueChange = onNameChange,
+            label = { Text("Name") }
+        )
     }
+}
 
-    @Composable
-    fun viewModelExample(name: String, onNameChange: (String) -> Unit){
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text(
-                text = "Hello, $name",
-                modifier = Modifier.padding(bottom = 8.dp),
-                style = MaterialTheme.typography.h5
-            )
-            OutlinedTextField(
-                value = name,
-                onValueChange = onNameChange,
-                label = { Text("Name") }
-            )
-        }
+@Composable
+fun viewModelExample(name: String, onNameChange: (String) -> Unit){
+    Column(modifier = Modifier.padding(16.dp)) {
+        Text(
+            text = "Hello, $name",
+            modifier = Modifier.padding(bottom = 8.dp),
+            style = MaterialTheme.typography.h5
+        )
+        OutlinedTextField(
+            value = name,
+            onValueChange = onNameChange,
+            label = { Text("Name") }
+        )
     }
 }
