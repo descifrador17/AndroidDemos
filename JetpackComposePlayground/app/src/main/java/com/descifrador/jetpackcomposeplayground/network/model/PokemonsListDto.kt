@@ -3,7 +3,7 @@ package com.descifrador.jetpackcomposeplayground.network.model
 import com.google.gson.annotations.SerializedName
 
 
-data class PokemonsListEntity (
+data class PokemonsListDto (
     val count:Int? = 0,
     @SerializedName("next")
     val nextLink:String? = null,

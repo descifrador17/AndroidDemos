@@ -1,7 +1,7 @@
 package com.descifrador.jetpackcomposeplayground.network.model
 
 
-data class PokemonDetailsEntity(
+data class PokemonDetailsDto(
     val abilities : List<AbilitiesEntity>? = null,
     val height : Int? = 0,
     val id : Int? = 0,
