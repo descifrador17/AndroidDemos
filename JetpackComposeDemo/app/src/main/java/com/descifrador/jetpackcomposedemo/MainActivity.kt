@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.compose.material.*
 
 import com.descifrador.jetpackcomposedemo.ui.theme.JetpackComposeDemoTheme
-import kotlin.math.exp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +14,7 @@ class MainActivity : ComponentActivity() {
             JetpackComposeDemoTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    SwitchDemo()
+                    TextViewDemo()
                 }
             }
         }
