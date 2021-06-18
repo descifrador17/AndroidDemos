@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RoomDemoApp">
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.activity.AddUpdateDishActivity"
+            android:label="Add Dish"
+            android:theme="@style/Theme.RoomDemoApp.NoActionBar"></activity>
+        <activity
+            android:name=".view.activity.MainActivity"
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".view.activity.SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.RoomDemoApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
