@@ -11,7 +11,8 @@
         android:theme="@style/Theme.RoomDemoApp">
         <activity android:name=".view.activity.AddUpdateDishActivity"
             android:label="Add Dish"
-            android:theme="@style/Theme.RoomDemoApp.NoActionBar"></activity>
+            android:theme="@style/Theme.RoomDemoApp.NoActionBar"
+            android:configChanges="orientation"></activity>
         <activity
             android:name=".view.activity.MainActivity"
             android:label="@string/app_name"></activity>
